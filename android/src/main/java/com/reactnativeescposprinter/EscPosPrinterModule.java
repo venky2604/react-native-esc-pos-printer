@@ -505,7 +505,7 @@ public class EscPosPrinterModule extends ReactContextBaseJavaModule implements R
         String base64ImageString = params.getString(0);
         int inputWidth = params.getInt(1);
 
-        byte[] decodeBase64ImageString = Base64.decode(base64ImageString, Base64.URL_SAFE);
+        byte[] decodeBase64ImageString = Base64.decode(base64ImageString, Base64.DEFAULT);
         Bitmap base64Image = BitmapFactory.decodeByteArray(decodeBase64ImageString, 0, decodeBase64ImageString.length);
 
         handlePrintImage(base64Image, inputWidth);
